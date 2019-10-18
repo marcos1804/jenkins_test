@@ -7,6 +7,7 @@ pipeline {
     }
     environment {
         CI = 'true'
+        USERNAME = credentials('USERNAME')
     }
     stages {
         stage('Build') {
@@ -17,7 +18,7 @@ pipeline {
         stage('Test') {
             steps {
                 sh 'npm test'
-            }
+            }s
         }
         stage('Deploy') {
             steps {
