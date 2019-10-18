@@ -21,7 +21,7 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-                sh 'ls -la'
+                sh 'ls -la scripts'
                 sh './scripts/deploy.sh'
                 input message: 'Has acabado de ver el server? (Click "Proceed" para continuar)'
                 sh '.scripts/kill.sh'
